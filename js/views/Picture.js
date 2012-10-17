@@ -8,7 +8,7 @@
 define(['backbone', 'underscore', 'jquery', 'text!templates/Picture.html'],
 function(Backbone, _, $, templateHTML) {
     var PictureView = Backbone.View.extend({
-        tagName: 'p',
+        tagName: 'div',
 
         initialize: function() {
             _.bindAll(this, 'render', 'unrender');

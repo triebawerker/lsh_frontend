@@ -14,7 +14,6 @@ function(Backbone, _, $, pictureView, pictures) {
 
         initialize: function() {
             _.bindAll(this, 'unrender', 'render', 'appendPicture');
-            this.items_element = $('#revisions');
             pictures.bind('refresh', this.render);
             pictures.bind('add', this.render);
             pictures.bind('reset', this.render);
@@ -24,7 +23,7 @@ function(Backbone, _, $, pictureView, pictures) {
          * unrender all content
          */
         unrender: function() {
-            this.items_element.html("");
+            this.el.html("");
             this.el.addClass('hidden');
         },
 
@@ -35,7 +34,7 @@ function(Backbone, _, $, pictureView, pictures) {
         appendPicture: function(picture) {
             var view = new pictureView({model: picture});
             var el = view.render().el;
-            this.items_element.append(el);
+            this.el.append(el);
         },
 
         render: function () {
